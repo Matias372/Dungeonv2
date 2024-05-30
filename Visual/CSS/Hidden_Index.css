@@ -1,0 +1,12 @@
+.hidden {
+    display: none;
+}
+.center {
+    text-align: center;
+    margin-top: 20px;
+}
+#loginButtons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}

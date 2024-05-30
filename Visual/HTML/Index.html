@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dungeon</title>
+    <!--COLOCAR FIRMAS, AUTOR, CONTACTO-->
+    <link rel="stylesheet" href="../CSS/Hidden_Index.css">
+</head>
+<body>
+    <!--CONTENT=========================================================-->
+    <div id="content">
+        <img id="logo" src="../../Resources/img/Name_log.png" alt="Logo" class="center">
+        <div id="loginButtons" class="center">
+            <button onclick="showPopup()">Iniciar Sesión</button>
+        </div>
+        <section id="game" class="hidden">
+            <h1>Welcome to the Game</h1>
+            <!-- Contenido del juego aquí -->
+        </section>
+    </div>
+
+    <!--POPUP=========================================================-->
+    <div id="popup" class="popup" style="display: none;">
+        <!-- Contenido del popup aquí -->
+        <div id="popupContent" class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2>Iniciar Sesión</h2>
+            <!-- Formulario de inicio de sesión -->
+            <form>
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="username"><br><br>
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password"><br><br>
+                <input type="submit" value="Iniciar Sesión">
+            </form>
+            <!-- Opción para registrarse -->
+            <button onclick="showRegisterForm()">Registrarse</button>
+        </div>
+    </div>
+
+    <!--FOOTER=========================================================-->
+    <footer>
+        <div class="attribution">
+            <h4>Atribución a:</h4>
+            <ul>
+                <li><a href="https://opengameart.org/users/justin-nichol">Justin Nichol</a></li>
+                <li><a href="https://www.freepik.es/autor/upklyak">@upklyak</a></li>
+                <li><a href="https://www.freepik.es/autor/pikisuperstar">@pikisuperstar</a></li>
+                <li><a href="https://game-icons.net ">game-icons.net</a></li>
+            </ul>
+            <p>se usaron recursos gratuitos de ellos en la creacion de la pagina y juego</p>
+        </div>
+        <div class="about-us">
+            <h4>Datos sobre nosotros</h4>
+            <p>Proyect Dungeon" es un programa creado usando ChatGPT como asistente. Se trata de un juego RPG
+             por turnos incluido dentro de la pagina web. Se genero como practica sin un objetivo en especifico, 
+             simplemente como hobby y práctica. Si se llega a termina estaré muy feliz.</p>
+        </div>
+        <div class="social-media">
+            <h4>Redes sociales</h4>
+            <ul>
+                <li><a href="https://www.facebook.com">Facebook</a></li>
+                <li><a href="https://www.twitter.com">Twitter</a></li>
+                <li><a href="https://www.instagram.com">Instagram</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!--SCRIPTS=========================================================-->
+    <script src="../../Control/Scripts/CheckSession.js"></script>
+    <script src="../../Control/Scripts/PopUp_Session.js"></script>
+</body>
+</html>
