@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="../../Visual/CSS/modal.css">
+    <script src="../../Control/Scripts/Valid_Form_Register.js"></script>
+    <script src="../../Control/Scripts/modal.js"></script>
+</head>
+<body>
+    <h1>Registrarse</h1>
+    <form method="post" onsubmit="validarFormulario(); return false;">
+        <label for="usuario">Usuario:</label><br>
+        <input type="text" id="usuario" name="usuario" required><br><br>
+        
+        <label for="email">Correo electrónico:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="clave">Contraseña:</label><br>
+        <input type="password" id="clave" name="clave" required><br><br>
+        
+        <label for="confirmar_clave">Confirmar Contraseña:</label><br>
+        <input type="password" id="confirmar_clave" name="confirmar_clave" required><br><br>
+        
+        <input type="submit" value="Registrarse">
+    </form>
+
+    <div id="mensaje-error" style="color: red; display: none;"></div>
+
+    <!-- Modal -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p id="modal-message">Usuario registrado exitosamente.</p>
+            <button onclick="redirectToIndex()">OK</button>
+        </div>
+    </div>
+</body>
+</html>

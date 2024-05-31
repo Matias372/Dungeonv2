@@ -1,32 +1,36 @@
 <?php
-// Incluir el archivo de conexión a la base de datos
-require_once('db_connection.php');
-// Incluir el script para generar UUID
-require_once('UUIDGenerator.php');
+// Incluir la conexión a la base de datos
+include 'db_connection.php';
 
-// Obtener los datos del formulario de registro
-$username = $_POST['username'];
-$email = $_POST['email'];
-$password = $_POST['password'];
+// Verificar si se envió el formulario
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['usuario'];
+    $email = $_POST['email'];
+    $password = $_POST['clave'];
 
-// Generar un UUID para el nuevo usuario
-$uuid = generateUUID();
+    // Encriptar la contraseña
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-// Generar el hash de la contraseña
-$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    // Generar un UUID
+    include '../../Control/UUIDGenerator.php';
+    $uuid = generateUUID();
 
-// Insertar los datos del nuevo usuario en la base de datos
-$sql = "INSERT INTO Usuarios (Id, Usuario, Mail, Clave, Fecha) VALUES (?, ?, ?, ?, NOW())";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("ssss", $uuid, $username, $email, $hashedPassword);
+    // Insertar el nuevo usuario en la base de datos
+    $sql = "INSERT INTO Usuarios (Id, Usuario, Mail, Clave) VALUES (?, ?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    if ($stmt === false) {
+        die('Error al preparar la consulta: ' . htmlspecialchars($conn->error));
+    }
+    $stmt->bind_param("ssss", $uuid, $username, $email, $hashedPassword);
 
-if ($stmt->execute()) {
-    echo "El usuario se registró exitosamente.";
-} else {
-    echo "Error al registrar el usuario: " . $stmt->error;
+    if ($stmt->execute()) {
+        echo "Usuario registrado exitosamente.";
+    } else {
+        echo "Error al registrar el usuario.";
+    }
+
+    $stmt->close();
 }
 
-// Cerrar la conexión a la base de datos
-$stmt->close();
 $conn->close();
 ?>

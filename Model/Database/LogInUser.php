@@ -1,39 +1,39 @@
 <?php
-// Incluir el archivo de conexión a la base de datos
-require_once('db_connection.php');
+// Iniciar la sesión
+session_start();
 
-// Obtener los datos del formulario de inicio de sesión
-$email = $_POST['email'];
-$password = $_POST['password'];
+// Incluir la conexión a la base de datos
+include 'db_connection.php';
 
-// Buscar el usuario por su correo electrónico en la base de datos
-$sql = "SELECT Id, Clave FROM Usuarios WHERE Mail = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("s", $email);
-$stmt->execute();
-$stmt->store_result();
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-if ($stmt->num_rows > 0) {
-    // El correo electrónico existe, obtener la contraseña hash
-    $stmt->bind_result($id, $hashedPassword);
-    $stmt->fetch();
+    // Verificar si el correo electrónico existe
+    $sql = "SELECT * FROM Usuarios WHERE Mail = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    // Verificar si la contraseña hash coincide
-    if (password_verify($password, $hashedPassword)) {
-        // Iniciar sesión
-        session_start();
-        $_SESSION['user_id'] = $id;
-        echo "Inicio de sesión exitoso.";
+    if ($result->num_rows == 1) {
+        $user = $result->fetch_assoc();
+
+        // Verificar la contraseña
+        if (password_verify($password, $user['Clave'])) {
+            // Iniciar sesión y redirigir al usuario
+            $_SESSION['user_id'] = $user['Id'];
+            $_SESSION['username'] = $user['Usuario'];
+            echo "<script>alert('Inicio de sesión exitoso.'); window.location.href = '../../Visual/HTML/index.html';</script>";
+        } else {
+            echo "<script>alert('Contraseña incorrecta.'); window.history.back();</script>";
+        }
     } else {
-        // La contraseña no coincide
-        echo "Contraseña incorrecta. Por favor, inténtalo de nuevo.";
+        echo "<script>alert('El correo electrónico no está registrado.'); window.history.back();</script>";
     }
-} else {
-    // El correo electrónico no está registrado
-    echo "El correo electrónico proporcionado no está registrado.";
+
+    $stmt->close();
 }
 
-// Cerrar la conexión a la base de datos
-$stmt->close();
 $conn->close();
 ?>

@@ -13,7 +13,4 @@ function generateUUID() {
     // Formatear el UUID en el formato estándar (8-4-4-4-12 caracteres)
     return vsprintf('%s%s-%s-%s-%s-%s%s%s', str_split(bin2hex($data), 4));
 }
-
-// Generar un UUID y devolverlo como respuesta
-echo generateUUID();
 ?>
