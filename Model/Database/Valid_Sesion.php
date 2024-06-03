@@ -1,37 +1,54 @@
 <?php
-// Incluir el archivo de conexión a la base de datos
+// Incluye el archivo de conexión a la base de datos
 include 'db_connection.php';
 
-// Obtener los datos del formulario
-$email = $_POST["email"];
-$password = $_POST["clave"];
+// Verifica que los datos POST estén definidos
+if (isset($_POST['email']) && isset($_POST['password'])) {
+    // Obtiene los datos del formulario POST
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-// Consultar la base de datos para verificar las credenciales del usuario
-$sql = "SELECT * FROM Usuarios WHERE Email = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("s", $email);
-$stmt->execute();
-$result = $stmt->get_result();
+    // Prepara la consulta para verificar si el correo electrónico existe en la tabla usuarios
+    $query = "SELECT Id, Usuario, Clave FROM usuarios WHERE Mail = ?";
+    $stmt = $conn->prepare($query);
+    if ($stmt) {
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-if ($result->num_rows > 0) {
-    // Si se encuentra el usuario, verificar la contraseña
-    $user = $result->fetch_assoc();
-    if (password_verify($password, $user["Clave"])) {
-        // Si las credenciales son correctas, iniciar sesión
-        session_start();
-        $_SESSION["Usuario"] = $user["Usuario"];
-        $_SESSION["ID"] = $user["Id"];
-        echo "correcto";
+        // Verifica si se encontró un usuario con el correo electrónico dado
+        if ($result->num_rows > 0) {
+            // Obtiene los datos del usuario
+            $row = $result->fetch_assoc();
+            $userId = $row['Id'];
+            $username = $row['Usuario'];
+            $hashedPassword = $row['Clave']; // Usa el nombre correcto de la columna
+
+            // Verifica si la contraseña coincide
+            if (password_verify($password, $hashedPassword)) {
+                // La contraseña es correcta, inicia sesión y guarda el Id y el Usuario en la sesión
+                session_start();
+                $_SESSION['Id'] = $userId;
+                $_SESSION['Usuario'] = $username;
+
+                // Devuelve un mensaje de éxito al JavaScript
+                echo json_encode(array("message" => "Exito", "Usuario" => $username, "Id" => $userId));
+            } else {
+                // La contraseña es incorrecta, devuelve un mensaje de error al JavaScript
+                echo "contraseña incorrecta";
+            }
+        } else {
+            // No se encontró un usuario con el correo electrónico dado, devuelve un mensaje de error al JavaScript
+            echo "Mail no existe";
+        }
+
+        // Cierra la conexión y libera los recursos
+        $stmt->close();
+        $conn->close();
     } else {
-        // Si la contraseña es incorrecta, responder con "incorrecto"
-        echo "Contraseña incorrecta.";
+        echo "Error en la consulta";
     }
 } else {
-    // Si el usuario no existe, responder con "incorrecto"
-    echo "No se registra tal usuario.";
+    echo "Datos incompletos";
 }
-
-// Cerrar la conexión
-$stmt->close();
-$conn->close();
 ?>
