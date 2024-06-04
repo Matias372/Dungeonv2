@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú del Juego</title>
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+<body>
+    <main>
+        <img src="../../Resources/img/Name_log.png" alt="Fondo de Menú del Juego" width="300">
+        <div class="menu-buttons">
+            <button onclick="startNewGame()">Nueva Partida</button>
+            <button onclick="loadSavedGame()">Cargar Partida</button>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../../Control/Game_Scripts/Game_Handler.js"></script>
+    <script>
+        function startNewGame() {
+            loadScene('NewGame'); // Cargar el primer escenario al iniciar una nueva partida
+        }
+
+        function loadSavedGame() {
+            loadScene('LoadGame'); // Cargar el segundo escenario al cargar una partida guardada
+        }
+    </script>
+</body>
+</html>

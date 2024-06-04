@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (!response.ok) {
                 throw new Error("Network response was not ok " + response.statusText);
             }
-            return response.text();
+            return response.json(); // Cambia esto para esperar una respuesta JSON
         })
         .then(function(data) {
             // Maneja la respuesta del servidor
@@ -42,24 +42,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Función para manejar la respuesta del servidor
     function handleResponse(response) {
-        if (response && response.message === "Exito") {
-            // Si la sesión se inicia correctamente, mostrar un mensaje de alerta con el usuario y el ID
+        console.log(response);
+        if (response.status === "success" && response.message === "Exito") {
             alert("¡Inicio de sesión exitoso!");
-            window.location.href = "../../Visual/HTML/Index.html";
-        } else if (response === "contraseña incorrecta") {
+            window.location.href = "/Dungeonv2/Visual/HTML/Index.html";
+        } else if (response.status === "error" && response.message === "contraseña incorrecta") {
             showMessage("La contraseña ingresada es incorrecta.");
-        } else if (response === "Mail no existe") {
+        } else if (response.status === "error" && response.message === "Mail no existe") {
             showMessage("El correo electrónico ingresado no existe.");
         } else {
             showMessage("Hubo un error.");
         }
     }
 
-
-    // Función para mostrar mensajes de error en el div "error-message"
     function showMessage(message) {
         var errorMessageDiv = document.getElementById("error-message");
         errorMessageDiv.textContent = message;
-        errorMessageDiv.style.color = 'red'; // Estilo adicional para resaltar el mensaje de error
+        errorMessageDiv.style.color = 'red';
     }
 });

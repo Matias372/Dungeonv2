@@ -1,9 +1,3 @@
-// Espera a que el documento esté completamente cargado
-document.addEventListener("DOMContentLoaded", function() {
-    // Verificar si hay una sesión activa
-    checkSession();
-});
-
 // Redirigir a la página de inicio de sesión
 function redirectLogin() {
     window.location.href = "../../Visual/HTML/IniciarSesion.html";
@@ -16,5 +10,10 @@ function redirectRegister() {
 
 // Redirigir a la página del juego
 function redirectToGame() {
-    window.location.href = "../../Visual/HTML/Game.html";
+    window.location.href = "../../Visual/HTML/game_template.html";
 }
+
+// Ejecutar checkSession cuando la página se carga
+window.onload = function() {
+    checkSession();
+};

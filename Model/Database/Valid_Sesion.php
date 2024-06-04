@@ -32,23 +32,23 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                 $_SESSION['Usuario'] = $username;
 
                 // Devuelve un mensaje de éxito al JavaScript
-                echo json_encode(array("message" => "Exito", "Usuario" => $username, "Id" => $userId));
+                echo json_encode(["status" => "success", "message" => "Exito"]);
             } else {
                 // La contraseña es incorrecta, devuelve un mensaje de error al JavaScript
-                echo "contraseña incorrecta";
+                echo json_encode(["status" => "error", "message" => "contraseña incorrecta"]);
             }
         } else {
             // No se encontró un usuario con el correo electrónico dado, devuelve un mensaje de error al JavaScript
-            echo "Mail no existe";
+            echo json_encode(["status" => "error", "message" => "Mail no existe"]);
         }
 
         // Cierra la conexión y libera los recursos
         $stmt->close();
         $conn->close();
     } else {
-        echo "Error en la consulta";
+        echo json_encode(["status" => "error", "message" => "Error en la consulta"]);
     }
 } else {
-    echo "Datos incompletos";
+    echo json_encode(["status" => "error", "message" => "Datos incompletos"]);
 }
 ?>

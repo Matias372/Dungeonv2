@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-if(isset($_SESSION['Usuario']) && isset($_SESSION['ID'])) {
+if (isset($_SESSION['Id']) && isset($_SESSION['Usuario'])) {
     echo "sesion_activa";
 } else {
-    echo "sesion_inactiva";
+    echo "no_sesion";
 }
 ?>

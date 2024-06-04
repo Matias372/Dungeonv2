@@ -3,22 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Inicio</title>
+    <title>Juego - Proyect Dungeon</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Agrega aquí tus estilos personalizados */
+        #game-section {
+            width: 100%;
+            height: 80vh; /* Ajusta la altura según sea necesario */
+            border: 1px solid #ccc;
+            overflow: auto;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <img src="../../Resources/img/Name_log.png" alt="Logo de tu Empresa" width="100">
+        <a href="Index.html"><img src="../../Resources/img/Name_log.png" alt="Logo de tu Empresa" width="100"></a>
+        <button id="logout-button" onclick="logout()">Cerrar Sesión</button>
     </header>
-    <nav>
-        <button id="login-button" onclick="redirectLogin()">Iniciar Sesión</button>
-        <button id="register-button" onclick="redirectRegister()">Registrarse</button>
-        <button id="play-button" onclick="redirectToGame()" style="display: none;">Jugar</button>
-        <button id="logout-button" onclick="logout()" style="display: none;">Cerrar Sesión</button>
-    </nav>
+    
+    <main>
+        <section id="game-section">
+            <!-- Aquí se cargará el contenido del juego -->
+        </section>
+    </main>
     <footer>
-        <!-- FOOTER========================================================= -->
         <div class="attribution">
             <h4>Atribución a:</h4>
             <ul>
@@ -45,7 +54,7 @@
 
     <!-- SCRIPTS ============================================================ -->
     <script src="../../Control/Scripts/Session_Handler.js"></script>
-    <script src="../../Control/Scripts/Index_Handler.js"></script>
+    <script src="../../Control/Game_Scripts/Game_Handler.js"></script>
     <!-- Bootstrap JS, Popper.js, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
