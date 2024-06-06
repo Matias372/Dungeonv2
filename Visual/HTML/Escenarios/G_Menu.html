@@ -1,31 +1,26 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú del Juego</title>
-    <!-- Estilos CSS -->
-    <link rel="stylesheet" href="../CSS/styles.css">
+    <title>Project Dungeon</title>
+    <link rel="stylesheet" href="../../Visual/CSS/Game/Menu_styles.css">
 </head>
 <body>
-    <main>
-        <img src="../../Resources/img/Name_log.png" alt="Fondo de Menú del Juego" width="300">
-        <div class="menu-buttons">
-            <button onclick="startNewGame()">Nueva Partida</button>
-            <button onclick="loadSavedGame()">Cargar Partida</button>
+    <section class="menugame">
+        <!-- Título del juego (imagen) -->
+        <img src="../../Resources/img/Name_log.png" alt="Project Dungeon" class="title-menu-game">
+
+        <!-- Opciones de juego -->
+        <div class="options-menu-game">
+            <button onclick="loadScene('NewGame')">Nueva Partida</button>
+            <button onclick="loadScene('LoadGame')">Cargar Partida</button>
         </div>
-    </main>
+    </section>
 
-    <!-- Scripts -->
-    <script src="../../Control/Game_Scripts/Game_Handler.js"></script>
-    <script>
-        function startNewGame() {
-            loadScene('NewGame'); // Cargar el primer escenario al iniciar una nueva partida
-        }
-
-        function loadSavedGame() {
-            loadScene('LoadGame'); // Cargar el segundo escenario al cargar una partida guardada
-        }
-    </script>
+    
+     <!-- Scripts -->
+     <script src="../../Control/Game_Scripts/Game_Handler.js"></script>
 </body>
 </html>
+

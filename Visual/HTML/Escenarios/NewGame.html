@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Partida</title>
+    <link rel="stylesheet" href="../../Visual/CSS/Game/NewGameStyle.css">
+    <script src="../../Control/Game_Scripts/NewGame.js"></script>
+</head>
+<body id="SeleccionPersonaje">
+
+    <section class="SeleccionPersonajeMenu">
+
+        <h1 id="text-SP">Selecciona tu personaje</h1>
+
+        <div class="clase">
+            <div class="personaje" id="Barbaro">
+                <img src="../../Resources/img/Character/Barbaro.png" alt="Personaje 1" class="personaje-img" onclick="seleccionarClase('Barbaro')" id="Barbaro">
+                <p class="personaje-nombre">Bárbaro</p>
+            </div>
+
+            <div class="personaje" id="Mago">
+                <img src="../../Resources/img/Character/Mago.png" alt="Personaje 2" class="personaje-img" onclick="seleccionarClase('Mago')" id="Mago">
+                <p class="personaje-nombre">Mago</p>
+            </div>
+
+            <div class="personaje" id="Cazador">
+                <img src="../../Resources/img/Character/Cazador.png" alt="Personaje 3" class="personaje-img" onclick="seleccionarClase('Cazador')" id="Cazador">
+                <p class="personaje-nombre">Cazador</p>
+            </div>
+
+            <div class="personaje" id="Guerrero">
+                <img src="../../Resources/img/Character/Guerrero.png" alt="Personaje 4" class="personaje-img" onclick="seleccionarClase('Guerrero')"id="Guerrero">
+                <p class="personaje-nombre">Guerrero</p>
+            </div>
+        </div>
+
+        <div class="nombre-personaje">
+            <label for="nombre">Nombre del personaje:</label>
+            <input type="text" id="nombre" placeholder="Ingresar nombre">
+        </div>
+
+        <button class="crear-btn" onclick="createNewGame()">Crear</button>
+        <button class="crear-btn" onclick="loadScene('Menu')">Volver</button>
+
+    </section>
+    
+    
+</body>
+</html>

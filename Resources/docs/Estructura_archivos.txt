@@ -1,0 +1,41 @@
+Proyecto/
+│
+├── Resources/
+│   └── img/
+│       ├── Name_log.png
+│       ├── Backgrounds
+│       │   ├── texture.png
+│       │   ├── Menu.png
+├── Control/
+│   ├── Game_Scripts/
+│   │   ├── Game_Handler.js
+│   │   └── nueva_partida.js
+│   ├── Scripts/
+│   │   ├── Index_Handler.js
+│   │   ├── modal.js
+│   │   ├── Session_Handler.js
+│   │   ├── Valid_Form_Login.js
+│   │   └── Valid_Form_Register.js
+│   ├── UUIDGenerator.php
+│   └── Check_Session.php
+│
+├── Model/
+│   └── Database/
+│       └── LogOutUser.php
+│
+├── Visual/
+    ├── HTML/
+    │   ├── game_template.html
+    │   ├──  index.html
+    │   └──Escenarios/
+    │       ├── G_Menu.html
+    │       ├── NewGame.html
+    │       ├── LoadGame.html
+    │       └── Void404.html
+    ├── CSS/
+        └── modal.css
+        ├── Hidden_Index.css
+        ├── gtemplate.css
+        └── Game/
+        │   ├── game_estilos.css
+        │   └── nueva_partida_estilo.css

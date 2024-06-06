@@ -9,7 +9,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     $password = $_POST['password'];
 
     // Prepara la consulta para verificar si el correo electrónico existe en la tabla usuarios
-    $query = "SELECT Id, Usuario, Clave FROM usuarios WHERE Mail = ?";
+    $query = "SELECT Id, Usuario, Clave FROM usuarios WHERE Email = ?";
     $stmt = $conn->prepare($query);
     if ($stmt) {
         $stmt->bind_param("s", $email);

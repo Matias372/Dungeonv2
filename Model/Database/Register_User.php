@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $uuid = generateUUID();
 
     // Insertar el nuevo usuario en la base de datos
-    $sql = "INSERT INTO Usuarios (Id, Usuario, Mail, Clave) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO Usuarios (Id, Usuario, Email, Clave) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     if ($stmt === false) {
         die('Error al preparar la consulta: ' . htmlspecialchars($conn->error));

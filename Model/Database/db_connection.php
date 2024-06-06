@@ -3,7 +3,7 @@
 $servername = "localhost"; // Cambia localhost por la dirección del servidor de tu base de datos si es diferente
 $username = "root"; // Cambia "tu_usuario" por el nombre de usuario de tu base de datos
 $password = ""; // Cambia "tu_contraseña" por la contraseña de tu base de datos
-$database = "dungeonv2"; // Cambia "nombre_de_tu_base_de_datos" por el nombre de tu base de datos
+$database = "proyecto dungeon"; // Cambia "nombre_de_tu_base_de_datos" por el nombre de tu base de datos
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $database);

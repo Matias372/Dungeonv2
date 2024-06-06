@@ -1,23 +1,29 @@
-// Función para cargar un escenario en el game-section
-function loadScene(scene) {
-    const gameSection = document.getElementById('game-section');
-    gameSection.innerHTML = ''; // Limpia el contenido anterior
-
-    switch(scene) {
-        case 'StartMenu':
-            loadHTMLScene('Escenarios/G_Menu.html');
+// Función para cargar un escenario dentro de game-section
+function loadScene(sceneName) {
+    let scenarioURL;
+    switch(sceneName) {
+        case 'Menu':
+            scenarioURL = '../../Visual/HTML/Escenarios/G_Menu.html';
             break;
         case 'NewGame':
-            loadHTMLScene('Escenarios/NewGame.html');
+            scenarioURL = '../../Visual/HTML/Escenarios/NewGame.html';
             break;
         case 'LoadGame':
-            loadHTMLScene('Escenarios/LoadGame.html');
+            scenarioURL = '../../Visual/HTML/Escenarios/LoadGame.html';
             break;
+        // Agrega más casos según sea necesario
         default:
-            loadHTMLScene('Escenarios/Void404.html');
+            console.error('Escenario no válido:', sceneName);
+            scenarioURL = '../../Visual/HTML/Escenarios/Void404.html';
             break;
     }
+    loadScenario(scenarioURL);
 }
+
+// Ejemplo de cómo cargar el menú inicial al iniciar el juego
+document.addEventListener('DOMContentLoaded', function() {
+    loadScene('Menu');
+});
 
 // Función para cerrar sesión
 function logout() {
@@ -34,8 +40,17 @@ function logout() {
         });
 }
 
-// Ejemplo de cargar un escenario al iniciar
-window.onload = function() {
-    checkSession();
-    loadScene('StartMenu'); // Cargar el primer escenario al iniciar
-};
+// Función para cargar el contenido del escenario usando fetch
+function loadScenario(scenarioURL) {
+    const gameSection = document.getElementById('game-section');
+    fetch(scenarioURL)
+        .then(response => response.text())
+        .then(data => {
+            gameSection.innerHTML = data;
+            console.log("Escenario cargado exitosamente desde " + scenarioURL);
+        })
+        .catch(error => {
+            console.error('Error al cargar el escenario:', error);
+            gameSection.innerHTML = '<p>Error al cargar el escenario.</p>';
+        });
+}
