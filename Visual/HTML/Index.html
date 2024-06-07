@@ -6,9 +6,8 @@
     <title>Página de Inicio</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../Visual/CSS/Footer_Styles.css">
     <link rel="stylesheet" href="../../Visual/CSS/Index_Styles.css">
-
+    <script src="../../Control/Scripts/Header_Handler.js"></script>
 </head>
 <body>
     <div id="header"></div>
@@ -51,6 +50,16 @@
             <img src="../../Resources/img/Character/Monsters/Goblin runts.png" alt="Descripción de la imagen 4" id=im4>
             <p id=in4>¡¡ESPERAMOS QUE TE DIVIERTAS!!</p>
             <span></span>
+        </div>
+    </section>
+
+    <!-- Mensaje de éxito -->
+    <section id="mensaje-exito" style="display: none;">
+        <div class="alert alert-success" role="alert">
+            Registro exitoso. ¡Bienvenido!
+            <button type="button" class="close" aria-label="Close" onclick="cerrarMensajeExito()">
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
     </section>
     
