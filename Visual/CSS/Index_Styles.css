@@ -1,0 +1,53 @@
+
+
+/*==============ESTILOS BODY==============*/
+body {
+    background-color: #0071BC;
+  }
+  
+  #introduccion div {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #introduccion img {
+    width: 25%; /* Ajustar al 20% del ancho del div padre */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  #introduccion p {
+    width: 50%; /* Ajustar al 60% del ancho del div padre */
+    padding: 5px;
+    background-color: black;
+    border: 3px solid white;
+    color: white;
+    font-size: 18px;
+    line-height: 1.4;
+  }
+  
+  #introduccion span {
+    width: 25%; /* Ajustar al 20% del ancho del div padre */
+  }
+  
+  #in1 {
+    min-height: 200px; /* Altura mínima de 200px para el div */
+  }
+  
+  #in2 {
+    min-height: 120px; /* Altura mínima de 120px para el div */
+  }
+  
+  #in3 {
+    min-height: 75px; /* Altura mínima de 75px para el div */
+  }
+  
+  #in4 {
+    min-height: 35px; /* Altura mínima de 35px para el div */
+  }
+  
+ 

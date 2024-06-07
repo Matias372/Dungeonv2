@@ -1,0 +1,36 @@
+{
+    "nombre": "Cazador",
+    "descripcion": "Un ágil cazador experto en el uso de arcos y trampas.",
+    "atributos": {
+      "fuerzaBasic": 10,
+      "resistenciaBasic": 10,
+      "destrezaBasic": 15,
+      "magiaBasic": 7
+    },
+    "habilidades": [
+      {
+        "nombre": "Disparo Preciso",
+        "descripcion": "Realiza un ataque certero con el arco, causando daño adicional.",
+        "nivelRequerido": 1,
+        "costoMana": 0,
+        "porcentajeExtraDanio": 20,
+        "tipo": "activa"
+      },
+      {
+        "nombre": "Trampa de Enredadera",
+        "descripcion": "Coloca una trampa que inmoviliza al enemigo por un turno.",
+        "nivelRequerido": 3,
+        "costoMana": 10,
+        "tipo": "activa"
+      },
+      {
+        "nombre": "Ojo de Águila",
+        "descripcion": "Aumenta la precisión del cazador durante 3 turnos.",
+        "nivelRequerido": 5,
+        "costoMana": 15,
+        "efectoDuracion": 3,
+        "tipo": "activa"
+      }
+    ]
+  }
+  

@@ -1,5 +1,5 @@
 body .menugame{
-  background-image: url('../../Resources/img/Backgrounds/Menu.png');
+  background-image: url('../../../Resources/img/Backgrounds/Menu.png');
   background-repeat: no-repeat;
   background-size: cover;
 }

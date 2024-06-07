@@ -1,0 +1,39 @@
+{
+    "nombre": "Berserker",
+    "descripcion": "Un guerrero salvaje que se sumerge en un estado de furia en combate, infligiendo daño masivo a sus enemigos.",
+    "atributos": {
+      "fuerzaBasic": 17,
+      "resistenciaBasic": 12,
+      "destrezaBasic": 8,
+      "magiaBasic": 5
+    },
+    "habilidades": [
+      {
+        "nombre": "Furia Desatada",
+        "descripcion": "Entra en un estado de furia, aumentando su daño físico pero reduciendo su defensa.",
+        "nivelRequerido": 1,
+        "costoMana": 0,
+        "aumentoAtaque": 30,
+        "reduccionDefensa": 20,
+        "efectoDuracion": 3,
+        "tipo": "activa"
+      },
+      {
+        "nombre": "Golpe Devastador",
+        "descripcion": "Realiza un golpe con toda su fuerza, infligiendo un gran daño a un solo objetivo.",
+        "nivelRequerido": 3,
+        "costoMana": 10,
+        "porcentajeExtraDanio": 50,
+        "tipo": "activa"
+      },
+      {
+        "nombre": "Grito de Batalla",
+        "descripcion": "Incrementa el daño de todos los aliados durante 2 turnos.",
+        "nivelRequerido": 5,
+        "costoMana": 15,
+        "efectoDuracion": 2,
+        "tipo": "activa"
+      }
+    ]
+  }
+  

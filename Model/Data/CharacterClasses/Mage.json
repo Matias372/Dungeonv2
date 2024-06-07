@@ -1,0 +1,35 @@
+{
+    "nombre": "Mago",
+    "descripcion": "Un hechicero versado en las artes arcanas, capaz de invocar poderosos hechizos.",
+    "atributos": {
+      "fuerzaBasic": 5,
+      "resistenciaBasic": 8,
+      "destrezaBasic": 10,
+      "magiaBasic": 19
+    },
+    "habilidades": [
+      {
+        "nombre": "Bola de Fuego",
+        "descripcion": "Lanza una bola de fuego que inflige daño mágico a un enemigo.",
+        "nivelRequerido": 1,
+        "costoMana": 5,
+        "tipo": "activa"
+      },
+      {
+        "nombre": "Escudo Arcano",
+        "descripcion": "Crea un escudo mágico que absorbe una cantidad de daño durante un turno.",
+        "nivelRequerido": 3,
+        "costoMana": 10,
+        "tipo": "activa"
+      },
+      {
+        "nombre": "Forma Etérea",
+        "descripcion": "El mago se vuelve etéreo, evitando todo daño durante 2 turnos.",
+        "nivelRequerido": 5,
+        "costoMana": 20,
+        "efectoDuracion": 2,
+        "tipo": "activa"
+      }
+    ]
+  }
+  

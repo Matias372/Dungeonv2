@@ -6,44 +6,58 @@
     <title>Página de Inicio</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../Visual/CSS/Footer_Styles.css">
+    <link rel="stylesheet" href="../../Visual/CSS/Index_Styles.css">
+
 </head>
 <body>
-    <header>
-        <img src="../../Resources/img/Name_log.png" alt="Logo de tu Empresa" width="100">
-    </header>
-    <nav>
-        <button id="login-button" onclick="redirectLogin()">Iniciar Sesión</button>
-        <button id="register-button" onclick="redirectRegister()">Registrarse</button>
-        <button id="play-button" onclick="redirectToGame()" style="display: none;">Jugar</button>
-        <button id="logout-button" onclick="logout()" style="display: none;">Cerrar Sesión</button>
-    </nav>
-    <footer>
-        <!-- FOOTER========================================================= -->
-        <div class="attribution">
-            <h4>Atribución a:</h4>
-            <ul>
-                <li><a href="https://opengameart.org/users/justin-nichol">Justin Nichol</a></li>
-                <li><a href="https://www.freepik.es/autor/upklyak">@upklyak</a></li>
-                <li><a href="https://www.freepik.es/autor/pikisuperstar">@pikisuperstar</a></li>
-                <li><a href="https://game-icons.net">game-icons.net</a></li>
-            </ul>
-            <p>Se usaron recursos gratuitos de ellos en la creación de la página y juego.</p>
+    <div id="header"></div>
+
+    <section id="introduccion">
+
+        
+
+        <!-- Primer div -->
+        <div>
+            <span></span>
+            <p id=in1>Hola Aventurero, bienvenido a "Project Dungeon". Nuestra ciudad es un lugar simple,
+                los aventureros como vos vienen por lo mismo, el portal. Si vuelves vivo trae unas monedas
+                y te recibire en la posada con una cerveza lista.
+            </p>
+            <img src="../../Resources/img/Character/NPC_Inn.png" alt="Descripción de la imagen 1" id=im1>
+            
+            
         </div>
-        <div class="about-us">
-            <h4>Datos sobre nosotros</h4>
-            <p>"Proyect Dungeon" es un programa creado usando ChatGPT como asistente. Se trata de un juego RPG por turnos incluido dentro de la página web. Se generó como práctica sin un objetivo en específico, simplemente como hobby y práctica. Si se llega a terminar estaré muy feliz.</p>
+
+        <!-- Segundo div -->
+        <div>
+            <img src="../../Resources/img/Character/NPC_Shop.png" alt="Descripción de la imagen 2" id=im2>
+            <p id=in2>En la ciudad puedes ir a la tienda para ver los equipos disponibles o puedes ir a la posada
+                para descansar y comprar suministros. 
+            </p>
+            <span></span>
         </div>
-        <div class="social-media">
-            <h4>Redes sociales</h4>
-            <ul>
-                <li><a href="https://www.facebook.com">Facebook</a></li>
-                <li><a href="https://www.twitter.com">Twitter</a></li>
-                <li><a href="https://www.instagram.com">Instagram</a></li>
-            </ul>
+
+        <!-- Tercer div -->
+        <div>
+            <span></span>
+            <p id=in3>Recuerda pasar por el gremio para solicitar y entregar misiones.</p>
+            <img src="../../Resources/img/Character/NPC_Guild.png" alt="Descripción de la imagen 3" id=im3>
+            
         </div>
-    </footer>
+
+        <!-- Cuarto div -->
+        <div>
+            <img src="../../Resources/img/Character/Monsters/Goblin runts.png" alt="Descripción de la imagen 4" id=im4>
+            <p id=in4>¡¡ESPERAMOS QUE TE DIVIERTAS!!</p>
+            <span></span>
+        </div>
+    </section>
+    
+    <div id="footer"></div>
 
     <!-- SCRIPTS ============================================================ -->
+    <script src="../../Control/Scripts/IncludeHeader&Footer.js"></script>
     <script src="../../Control/Scripts/Session_Handler.js"></script>
     <script src="../../Control/Scripts/Index_Handler.js"></script>
     <!-- Bootstrap JS, Popper.js, and jQuery -->

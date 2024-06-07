@@ -1,0 +1,20 @@
+Clases de Personajes:
+
+Podrías colocar los archivos JSON de las clases de personajes en la carpeta Model/Data/CharacterClasses. Por ejemplo:
+Model/Data/CharacterClasses/barbaro.json
+Model/Data/CharacterClasses/mago.json
+Model/Data/CharacterClasses/cazador.json
+Inventario:
+
+Puedes guardar el inventario del personaje en un archivo JSON dentro de la carpeta Model/Data. Por ejemplo:
+Model/Data/inventario.json
+Objetos:
+
+Los objetos del juego también pueden ser representados por archivos JSON. Puedes colocarlos en la misma carpeta que el inventario o crear una carpeta separada, como Model/Data/Objects. Por ejemplo:
+Model/Data/Objects/espada.json
+Model/Data/Objects/pocion_curacion.json
+Tienda:
+
+Si la tienda tiene materiales o ítems específicos que ofrece, puedes representarlos como archivos JSON. Podrías poner estos archivos en una carpeta Model/Data/Shop. Por ejemplo:
+Model/Data/Shop/materiales.json
+Model/Data/Shop/objetos_tiendas.json

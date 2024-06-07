@@ -1,0 +1,48 @@
+{
+    "nombre": "Guerrero",
+    "descripcion": "Un guerrero valiente y fuerte, especializado en combate cuerpo a cuerpo.",
+    "atributos": {
+      "fuerzaBasic": 12,
+      "resistenciaBasic": 15,
+      "destrezaBasic": 10,
+      "magiaBasic": 5
+    },
+    "habilidades": [
+      {
+        "nombre": "Poderío",
+        "descripcion": "Habilidad pasiva que aumenta el daño físico del guerrero.",
+        "tipo": "pasiva",
+        "efecto": "incremento del 10% en el daño físico",
+        "requisitos": {
+          "nivel": 5
+        }
+      },
+      {
+        "nombre": "Embestida",
+        "descripcion": "Ataque cuerpo a cuerpo poderoso que inflige daño adicional.",
+        "tipo": "activa",
+        "costoMana": 20,
+        "danoExtra": "50% de daño adicional",
+        "tiempoReuso": 3,
+        "requisitos": {
+          "nivel": 3
+        }
+      },
+      {
+        "nombre": "Furia",
+        "descripcion": "Aumenta la fuerza del guerrero durante varios turnos.",
+        "tipo": "activa",
+        "costoMana": 30,
+        "efectoTemporal": {
+          "atributo": "fuerza",
+          "valor": 20,
+          "turnos": 4
+        },
+        "tiempoReuso": 5,
+        "requisitos": {
+          "nivel": 7
+        }
+      }
+    ]
+  }
+  
