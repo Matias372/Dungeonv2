@@ -1,0 +1,3 @@
+- borrar mensajes de consola
+- agregar autor a las paginas
+-

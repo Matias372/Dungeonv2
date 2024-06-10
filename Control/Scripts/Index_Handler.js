@@ -27,8 +27,6 @@ function cerrarMensajeExito() {
 
 // Ejecutar checkSession y mostrar mensaje de éxito cuando la página se carga
 window.onload = function() {
-    checkSession();
-    // Obtener los parámetros de la URL
     const urlParams = new URLSearchParams(window.location.search);
     const mensaje = urlParams.get('mensaje');
 

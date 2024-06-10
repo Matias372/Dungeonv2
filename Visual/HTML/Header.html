@@ -1,5 +1,5 @@
 <header>
-    <link rel="stylesheet" href="../../Visual/CSS/header_styles.css">
+    <link rel="stylesheet" href="../../Visual/CSS/Header_Styles.css">
     <div class="header-container">
         <div class="logo-container">
             <a href="../../Visual/HTML/Index.html"><img src="../../Resources/img/NewLogo-01.png" alt="Logo de la empresa" class="logo-img"></a>
@@ -7,10 +7,26 @@
         </div>
         <nav>
             <ul id="nav-content">
-                <!-- Contenido dinámico -->
+                <li class="login-link"><a href="IniciarSesion.html">Iniciar sesión</a></li>
+                <li class="register-link"><a href="Registrarse.html">Registrarse</a></li>
+                <li class="user-dropdown" style="display: none;">
+                    <div class="user-avatar">
+                        <img src="../../Resources/img/User_img/Logo_sesion.png" alt="Avatar de usuario" id="avatar-img">
+                    </div>
+                    <div class="user-info">
+                        <div class="username" id="username"></div>
+                        <div class="dropdown-content">
+                            <ul>
+                                <li><a href="../../Visual/HTML/game_template.html">PLAY</a></li>
+                                <li><a href="cuenta.php">Perfil</a></li>
+                                <li><a href="../../Model/Database/LogOutUser.php">Log out</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li><!-- Contenido dinámico -->
             </ul>
         </nav>
     </div>
 
-    <script src="../../Control/Scripts/Header_Handler.js"></script>
+    <script src="../../Control/Scripts/Header_Handler.js?v=1"></script>
 </header>

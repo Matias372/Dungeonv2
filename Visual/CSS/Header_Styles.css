@@ -43,6 +43,13 @@ nav ul {
     align-items: center;
 }
 
+.dropdown-content ul{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 nav ul li {
     margin-left: 20px;
 }

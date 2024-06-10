@@ -1,59 +1,45 @@
 // Función para obtener los datos de sesión del servidor
-function getSessionData() {
-    return fetch("../../Control/Check_Session.php")
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Error al obtener los datos de sesión');
-            }
-            return response.json();
-        })
-        .then(data => {
-            if (data.status === 'success') {
-                return data.sessionData;
-            } else {
-                throw new Error(data.message);
-            }
-        })
-        .catch(error => {
-            console.error('Error al obtener los datos de sesión:', error);
-        });
+async function getSessionData() {
+    try {
+        const response = await fetch("../../Control/Check_Session.php");
+        if (!response.ok) {
+            throw new Error('Error al obtener los datos de sesión');
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error al obtener los datos', error);
+        // Ajustar el retorno para que coincida con la estructura esperada
+        return { status: 'error', sessionData: { isLoggedIn: false, message: 'Sesion no activada' } };
+    }
 }
 
 // Función para actualizar el encabezado basado en los datos de sesión
 function updateHeader(sessionData) {
-    const navContent = document.getElementById('nav-content');
-    if (sessionData.isLoggedIn) {
-        navContent.innerHTML = `
-            <li class="user-dropdown">
-                <div class="user-avatar">
-                    <img src="../../Recursos/img/User_img/${sessionData.userImg}" alt="Avatar de usuario">
-                </div>
-                <div class="user-info">
-                    <div class="username">${sessionData.username}</div>
-                    <div class="dropdown-content">
-                        <ul>
-                            <li><a href="Clasificaciones.php">Lista</a></li>
-                            <li><a href="cuenta.php">Cuenta</a></li>
-                            <li><a href="../../../Modelos/Pagina/logout.php">Salir</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </li>
-            <li class="play-link">
-                <a href="game.php" id="play-boton">Play</a>
-            </li>
-        `;
-    } else {
-        navContent.innerHTML = `
-            <li class="login-link"><a href="inicio_sesion.php">Iniciar sesión</a></li>
-            <li class="register-link"><a href="registro.php">Registrarse</a></li>
-        `;
+    const loginLink = document.querySelector('.login-link');
+    const registerLink = document.querySelector('.register-link');
+    const userDropdown = document.querySelector('.user-dropdown');
+    const username = document.getElementById('username');
+
+    if (sessionData.status === 'success' && sessionData.sessionData.isLoggedIn === true) {
+        if (loginLink) loginLink.style.display = 'none';
+        if (registerLink) registerLink.style.display = 'none';
+        if (userDropdown) userDropdown.style.display = 'block';
+        if (username) username.textContent = sessionData.sessionData.username;
+    } else if (sessionData.sessionData.isLoggedIn === false) {
+        if (loginLink) loginLink.style.display = 'block';
+        if (registerLink) registerLink.style.display = 'block';
+        if (userDropdown) userDropdown.style.display = 'none';
     }
+}
+
+async function HeaderOnload (){
+    console.log("Cargando encabezado...");
+    const sessionData = await getSessionData();
+    updateHeader(sessionData);
 }
 
 // Ejecutar la verificación de sesión y actualizar el encabezado al cargar la página
 document.addEventListener('DOMContentLoaded', async function() {
-    console.log("Cargando encabezado...");
-    const sessionData = await getSessionData();
-    updateHeader(sessionData);
+    HeaderOnload ();
 });
