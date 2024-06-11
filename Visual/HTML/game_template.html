@@ -7,59 +7,31 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../Visual/CSS/gtemplate.css">
-    <style>
-        /* Agrega aquí tus estilos personalizados */
-        #game-section {
-            width: 800px;
-            height: 600px; /* Ajusta la altura según sea necesario */
-            border: 1px solid #ccc;
-            overflow: auto;
-        }
-    </style>
 </head>
 <body>
-    <header>
-        <a href="Index.html"><img src="../../Resources/img/Name_log.png" alt="Logo de tu Empresa" width="100"></a>
-        <button id="logout-button" onclick="logout()">Cerrar Sesión</button>
-    </header>
+
+    <div id="header"></div>
     
     <main>
         <section id="game-section">
             <!-- Aquí se cargará el contenido del juego -->
         </section>
     </main>
-    <footer>
-        <div class="attribution">
-            <h4>Atribución a:</h4>
-            <ul>
-                <li><a href="https://opengameart.org/users/justin-nichol">Justin Nichol</a></li>
-                <li><a href="https://www.freepik.es/autor/upklyak">@upklyak</a></li>
-                <li><a href="https://www.freepik.es/autor/pikisuperstar">@pikisuperstar</a></li>
-                <li><a href="https://game-icons.net">game-icons.net</a></li>
-            </ul>
-            <p>Se usaron recursos gratuitos de ellos en la creación de la página y juego.</p>
-        </div>
-        <div class="about-us">
-            <h4>Datos sobre nosotros</h4>
-            <p>"Proyect Dungeon" es un programa creado usando ChatGPT como asistente. Se trata de un juego RPG por turnos incluido dentro de la página web. Se generó como práctica sin un objetivo en específico, simplemente como hobby y práctica. Si se llega a terminar estaré muy feliz.</p>
-        </div>
-        <div class="social-media">
-            <h4>Redes sociales</h4>
-            <ul>
-                <li><a href="https://www.facebook.com">Facebook</a></li>
-                <li><a href="https://www.twitter.com">Twitter</a></li>
-                <li><a href="https://www.instagram.com">Instagram</a></li>
-            </ul>
-        </div>
-    </footer>
+
+    <div id="footer"></div>
 
     <!-- SCRIPTS ============================================================ -->
+    <script src="../../Control/Scripts/IncludeHeader&Footer.js"></script>
     <script src="../../Control/Scripts/Session_Handler.js"></script>
-    <script src="../../Control/Game_Scripts/Game_Handler.js"></script>
+    <script src="../../Control/Scripts/Header_Handler.js"></script>
     <script src="../../Control/Scripts/404.js"></script>
+    <!-- Phaser 3 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.55.2/phaser.min.js"></script>
     <!-- Bootstrap JS, Popper.js, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="module" src="../../Control/Game_Scripts/Game_Handler.js"></script>
+
 </body>
 </html>
