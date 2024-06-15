@@ -1,0 +1,59 @@
+LOGO "PD" P como hacha y D como escudo. el hacha se clava en el escudo.
+
+EXPLICACION DEL JUEGO EN SI:
+
+Descripción General:
+un juego de rol (RPG) basado en decisiones con batallas por turnos al estilo de los clásicos rpg. En el juego, los jugadores asumen el papel de un aventurero solitario que recorre un mundo. A medida que exploran diversos escenarios, y participan en batallas por turnos contra enemigos variados. La historia se desarrolla a través de interacciones en la ciudad, misiones en el gremio y exploración en los pisos del portal.
+
+Estructura del Juego:
+
+Ciudad:
+
+Los jugadores comienzan en la ciudad, donde pueden elegir entre diferentes lugares para visitar.
+Pueden interactuar con personajes no jugables (PNJ) para obtener información, misiones.
+En la ciudad, los jugadores pueden planificar su próxima acción: visitar la tienda, el gremio, la posada o el portal.
+Tienda:
+
+Los jugadores pueden comprar y vender objetos, equipos y pociones.
+Los objetos comprados pueden mejorar las estadísticas del personaje o proporcionar ventajas tácticas en batalla.
+
+Gremio:
+
+Aquí los jugadores pueden aceptar y completar misiones variadas.
+Las misiones pueden involucrar desde derrotar a ciertos enemigos hasta recolectar objetos raros o explorar áreas peligrosas.
+Completar misiones otorga recompensas, experiencia.
+
+Posada:
+
+Los jugadores pueden descansar para restaurar su salud y energía.
+Pueden comprar objetos adicionales para usar en la aventura.
+La posada también ofrece la oportunidad de interactuar con otros aventureros, lo que puede llevar a consejos útiles o información adicional.
+
+Portal:
+
+Los jugadores pueden acceder al portal para explorar diferentes pisos, cada uno con su propio conjunto de enemigos y desafíos.
+Pueden elegir a qué piso del portal desean aventurarse.
+Cada piso del portal ofrece una experiencia única y enriquecedora.
+
+Pisos del Portal:
+
+Cada piso presenta un conjunto único de enemigos, rompecabezas y tesoros.
+Los jugadores pueden explorar, recoger objetos y enfrentarse a enemigos en batallas por turnos.
+Al completar los pisos, los jugadores pueden obtener valiosas recompensas, experiencia y desbloquear nuevas áreas.
+
+Combate por Turnos:
+
+Las batallas por turnos son fundamentales en el juego y se activan cuando el jugador se encuentra con enemigos.
+El jugador y los enemigos se turnan para atacar, defender, usar habilidades y consumir objetos.
+Cada habilidad tiene un costo de energía y puede tener efectos variados, como daño directo, efectos de estado o curación.
+Los jugadores deben elegir estratégicamente sus movimientos y objetos para sobrevivir a las batallas desafiantes.
+
+
+==============================================================================================================================================================================================
+
+
+¡Bienvenido a [Nombre del Juego]! Sumérgete en un emocionante viaje a través de un mundo de fantasía lleno de desafíos y misterios. Toma el papel de un intrépido aventurero y forja tu propio destino mientras exploras la ciudad, aceptas misiones en el gremio, descansas en la posada y te aventuras en los pisos del portal. ¡Prepárate para batallas estratégicas por turnos, emocionantes encuentros con enemigos y la oportunidad de convertirte en una leyenda! ¿Tienes lo que se necesita para triunfar en este RPG de decisiones?
+
+
+- IMAGENES
+
